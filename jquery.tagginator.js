@@ -80,7 +80,7 @@
 	
 	// default options
 	$.fn.tagginator.defaults = {
-		item: 'li label', // the selector for the tags
+		item: 'label', // the selector for the tags
 		activeClass: 'active', // class applied to active tags
 		disabledClass: 'disabled', // class applied to disabled tags if max is used
 		max: null, // maximum number of tags you can select

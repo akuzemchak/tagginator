@@ -1,3 +1,12 @@
+/* -------------------------------------------------- *
+ * Tagginator 1.0
+ * Updated: 06/24/2010
+ * -------------------------------------------------- *
+ * Author: Aaron Kuzemchak
+ * URL: http://aaronkuzemchak.com/
+ * Copyright: 2010 Aaron Kuzemchak
+ * License: MIT License
+** -------------------------------------------------- */
 (function($) {
 	// main function
 	$.fn.tagginator = function(options) {
@@ -14,7 +23,7 @@
 			$tags.addClass('tagginator');
 			
 			// activate tags with checked inputs
-			$tags.has('input:checked').addClass(settings.activeClass);
+			$tags.filter(':has(input:checked)').addClass(settings.activeClass);
 			
 			// disable other tags if max is reached
 			if(settings.max && $tags.filter('.' + settings.activeClass).length >= settings.max) {
@@ -71,11 +80,11 @@
 	
 	// default options
 	$.fn.tagginator.defaults = {
-		item: 'li label',
-		activeClass: 'active',
-		disabledClass: 'disabled',
-		max: null,
-		disabledClick: null
+		item: 'li label', // the selector for the tags
+		activeClass: 'active', // class applied to active tags
+		disabledClass: 'disabled', // class applied to disabled tags if max is used
+		max: null, // maximum number of tags you can select
+		disabledClick: null // callback function that receives the clicked tag as the argument
 	};
 	
 	// disable fields

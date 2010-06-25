@@ -2,6 +2,8 @@
 
 Tagginator is a plugin that turns a checkbox list into a set of clickable tags. When used inside a form, you'll be able to handle the data as if it were from normal checkboxes, because it **is** from normal checkboxes!
 
+Download the files to check out the demo.
+
 ## Usage
 
 First of all, you need to make sure your HTML is structured properly. I would recommend the following setup:

@@ -1,0 +1,117 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Tagginator Demo</title>
+	<style>
+		body {
+			color: #333;
+			font: 12px/normal Helvetica, Arial, sans-serif;
+		}
+		ul {
+			list-style: none;
+			margin: 0;
+			overflow: hidden;
+			padding: 0;
+			width: 300px;
+		}
+		li {
+			float: left;
+			margin: 0 5px 5px 0;
+		}
+		label {
+			background: #ddd;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			cursor: pointer;
+			display: block;
+			float: left;
+			padding: 5px;
+			text-align: center;
+			width: 80px;
+		}
+		label:hover {
+			background: #eee;
+		}
+		label.tagginator input {
+			display: none;
+		}
+		label.active {
+			background: #ffec8c;
+			border-color: #fed22e;
+			font-weight: bold;
+		}
+		label.disabled {
+			background: #eee;
+			color: #ccc;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Demo</h1>
+	<p>In this demo, you will be able to select at most three tags, and if you try to add more, you will get a message. Just view source to see how it's done (JavaScript is at the very bottom, but you knew to expect that)!</p>
+	<ul>
+		<li>
+			<label>
+				<input type="checkbox" name="tags[]" value="tag_1" />tag_1
+			</label>
+		</li>
+		<li>
+			<label>
+				<input type="checkbox" name="tags[]" value="tag_2" />tag_2
+			</label>
+		</li>
+		<li>
+			<label>
+				<input type="checkbox" name="tags[]" value="tag_3" />tag_3
+			</label>
+		</li>
+		<li>
+			<label>
+				<input type="checkbox" name="tags[]" value="tag_4" />tag_4
+			</label>
+		</li>
+		<li>
+			<label>
+				<input type="checkbox" name="tags[]" value="tag_5" />tag_5
+			</label>
+		</li>
+		<li>
+			<label>
+				<input type="checkbox" name="tags[]" value="tag_6" />tag_6
+			</label>
+		</li>
+		<li>
+			<label>
+				<input type="checkbox" name="tags[]" value="tag_7" />tag_7
+			</label>
+		</li>
+		<li>
+			<label>
+				<input type="checkbox" name="tags[]" value="tag_8" />tag_8
+			</label>
+		</li>
+		<li>
+			<label>
+				<input type="checkbox" name="tags[]" value="tag_9" />tag_9
+			</label>
+		</li>
+	</ul>
+	
+	<!-- javascript -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script src="../jquery.tagginator.js"></script>
+	<script>
+		$('ul').tagginator({
+			max: 3,
+			disabledClick: function(tag) {
+				alert('You are only allowed to choose three tags');
+			}
+		});
+	</script>
+</body>
+
+</html>
